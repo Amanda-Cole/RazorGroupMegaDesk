@@ -53,7 +53,7 @@ namespace RazorGroupMegaDesk.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Order");
+                    b.ToTable("Order", (string)null);
                 });
 #pragma warning restore 612, 618
         }
