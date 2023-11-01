@@ -34,12 +34,16 @@
             <th>
                 @Html.DisplayNameFor(model => model.Order[0].RushOrder)
             </th>
+            <th>
+                Total
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model.Order) {
-        <tr>
+            string total = item.CalculateTotal();
+            <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CustomerName)
             </td>
@@ -60,6 +64,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RushOrder)
+            </td>
+            <td>    
+                @Html.DisplayFor(modelItem => total)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
