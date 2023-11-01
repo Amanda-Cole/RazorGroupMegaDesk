@@ -48,6 +48,7 @@
         <tbody>
             @foreach (var item in Model.Order)
             {
+                string total = item.CalculateTotal();
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.CustomerName)

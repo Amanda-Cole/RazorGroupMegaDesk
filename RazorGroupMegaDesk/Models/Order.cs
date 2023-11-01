@@ -31,12 +31,6 @@ namespace RazorGroupMegaDesk.Models
         private const double PriceVeneer = 125;
         private const double PricePine = 50;
 
-
-
-
-
-
-
         public string CalculateTotal()
         {
 
@@ -150,17 +144,5 @@ namespace RazorGroupMegaDesk.Models
                     return 0;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
