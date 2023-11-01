@@ -5,60 +5,67 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Delete Desk Quote</h1>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Order</h4>
-    <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.CustomerName)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.CustomerName)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.OrderDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.OrderDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.Width)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.Width)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.Depth)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.Depth)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.Drawers)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.Drawers)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.SurfMaterial)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.SurfMaterial)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Order.RushOrder)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Order.RushOrder)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Order.Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8 border rounded shadow py-3 px-4 bg-white">
+        <h3>Are you sure you want to delete this quote?</h3>
+        <ul class="list-group">
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.CustomerName)</div>
+                    @Html.DisplayFor(model => model.Order.CustomerName)
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.OrderDate)</div>
+                    @Html.DisplayFor(model => model.Order.OrderDate)
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.Width)</div>
+                    @Html.DisplayFor(model => model.Order.Width)
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.Depth)</div>
+                    @Html.DisplayFor(model => model.Order.Depth)
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.Drawers)</div>
+                    @Html.DisplayFor(model => model.Order.Drawers)
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.SurfMaterial)</div>
+                    @Html.DisplayFor(model => model.Order.SurfMaterial)
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.RushOrder)</div>
+                    @Html.DisplayFor(model => model.Order.RushOrder)
+                </div>
+            </li>
+        </ul>
+        <hr />
+        <div class="row">
+            <div class="col-md-6">
+                <a asp-page="./Index" class="btn btn-outline-secondary w-100">Back to List</a>
+            </div>
+            <div class="col-md-6">
+                <form method="post">
+                    <input type="hidden" asp-for="Order.Id" />
+                    <input type="submit" value="Delete" class="btn btn-danger w-100" />
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

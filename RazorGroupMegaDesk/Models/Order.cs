@@ -1,20 +1,28 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RazorGroupMegaDesk.Models
 {
     public class Order
     {
         public int Id { get; set; }
+
+        [Display(Name = "Customer Name")]
         public string? CustomerName { get; set; }
 
         [Display(Name = "Order Date")]
         [DataType(DataType.Date)]
         public DateTime OrderDate { get; set; }
+
         public int Width { get; set; }
+
         public int Depth { get; set; }
+
         public int Drawers { get; set; }
+
+        [Display(Name = "Surface Material")]
         public string? SurfMaterial { get; set; }
+
+        [Display(Name = "Rush Order")]
         public int RushOrder { get; set; }
 
         private const double PriceOak = 200;
@@ -22,12 +30,6 @@ namespace RazorGroupMegaDesk.Models
         private const double PriceRosewood = 300;
         private const double PriceVeneer = 125;
         private const double PricePine = 50;
-
-
-
-
-
-
 
         public string CalculateTotal()
         {
@@ -142,17 +144,5 @@ namespace RazorGroupMegaDesk.Models
                     return 0;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
