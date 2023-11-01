@@ -53,6 +53,12 @@
                     @Html.DisplayFor(model => model.Order.RushOrder)
                 </div>
             </li>
+            <li class="list-group-item">
+                <div class="ms-2">
+                    <div class="fw-bold">@Html.DisplayNameFor(model => model.Order.TotalAmount)</div>
+                    @Html.DisplayFor(model => model.Order.TotalAmount)
+                </div>
+            </li>
         </ul>
         <hr />
         <div class="row">
