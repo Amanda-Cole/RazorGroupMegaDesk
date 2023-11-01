@@ -1,37 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using RazorGroupMegaDesk.Data;
 using RazorGroupMegaDesk.Models;
 
 namespace RazorGroupMegaDesk.Pages.Orders
 {
     public class CreateModel : PageModel
     {
-        private readonly RazorGroupMegaDesk.Data.RazorGroupMegaDeskContext _context;
+        private readonly Data.RazorGroupMegaDeskContext _context;
 
-        public CreateModel(RazorGroupMegaDesk.Data.RazorGroupMegaDeskContext context)
+        public CreateModel(Data.RazorGroupMegaDeskContext context)
         {
             _context = context;
         }
 
-        public IActionResult OnGet()
-        {
-            return Page();
-        }
-
         [BindProperty]
         public Order Order { get; set; } = default!;
-        
+
+        public SelectList RushOrderOptions { get; set; }
+
+        public IActionResult OnGet()
+        {
+            RushOrderOptions = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem("No Rush", "0"),
+                new SelectListItem("3 days", "3"),
+                new SelectListItem("5 days", "5"),
+                new SelectListItem("7 days", "7"),
+            }, "Value", "Text");
+
+            return Page();
+        }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid || _context.Order == null || Order == null)
+            if (!ModelState.IsValid || _context.Order == null || Order == null)
             {
                 return Page();
             }

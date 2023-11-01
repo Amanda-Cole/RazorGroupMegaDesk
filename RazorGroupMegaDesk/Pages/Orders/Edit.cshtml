@@ -63,7 +63,8 @@
                 <div class="col-md-6">
                     <div class="form-group my-2">
                         <label asp-for="Order.RushOrder" class="control-label fw-bold"></label>
-                        <input asp-for="Order.RushOrder" class="form-control" />
+                        <select class="form-select" id="rushOrder" asp-items="Model.RushOrderOptions" asp-for="Order.RushOrder">
+                        </select>
                         <span asp-validation-for="Order.RushOrder" class="text-danger"></span>
                     </div>
                 </div>
@@ -86,5 +87,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

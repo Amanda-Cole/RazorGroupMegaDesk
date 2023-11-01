@@ -1,20 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using RazorGroupMegaDesk.Data;
 using RazorGroupMegaDesk.Models;
 
 namespace RazorGroupMegaDesk.Pages.Orders
 {
     public class DetailsModel : PageModel
     {
-        private readonly RazorGroupMegaDesk.Data.RazorGroupMegaDeskContext _context;
+        private readonly Data.RazorGroupMegaDeskContext _context;
 
-        public DetailsModel(RazorGroupMegaDesk.Data.RazorGroupMegaDeskContext context)
+        public DetailsModel(Data.RazorGroupMegaDeskContext context)
         {
             _context = context;
         }

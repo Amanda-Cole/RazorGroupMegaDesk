@@ -39,3 +39,6 @@ body, html {
 .arrow{
     font-size: 8px;
 }
+.table-container {
+    overflow-x: auto;
+}

@@ -32,7 +32,7 @@ namespace RazorGroupMegaDesk.Models
                         Depth = 24,
                         Drawers = 2,
                         SurfMaterial = "Oak",
-                        RushOrder = 3,
+                        RushOrder = "3",
                     },
 
                     new Order
@@ -43,7 +43,7 @@ namespace RazorGroupMegaDesk.Models
                         Depth = 23,
                         Drawers = 6,
                         SurfMaterial = "Pine",
-                        RushOrder = 5
+                        RushOrder = "5",
                     },
 
                     new Order
@@ -54,7 +54,7 @@ namespace RazorGroupMegaDesk.Models
                         Depth = 20,
                         Drawers = 5,
                         SurfMaterial = "Oak",
-                        RushOrder = 3
+                        RushOrder = "3",
                     },
 
                     new Order
@@ -65,7 +65,7 @@ namespace RazorGroupMegaDesk.Models
                         Depth = 24,
                         Drawers = 2,
                         SurfMaterial = "Oak",
-                        RushOrder = 3
+                        RushOrder = "3",
                     }
                 );
                 context.SaveChanges();
