@@ -32,7 +32,7 @@ namespace RazorGroupMegaDesk.Models
                         Depth = 24,
                         Drawers = 2,
                         SurfMaterial = "Oak",
-                        RushOrder = 3
+                        RushOrder = 3,
                     },
 
                     new Order
