@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using RazorGroupMegaDesk.Data;
 using RazorGroupMegaDesk.Models;
 
 namespace RazorGroupMegaDesk.Pages.Orders
 {
     public class EditModel : PageModel
     {
-        private readonly RazorGroupMegaDesk.Data.RazorGroupMegaDeskContext _context;
+        private readonly Data.RazorGroupMegaDeskContext _context;
 
-        public EditModel(RazorGroupMegaDesk.Data.RazorGroupMegaDeskContext context)
+        public EditModel(Data.RazorGroupMegaDeskContext context)
         {
             _context = context;
         }
 
         [BindProperty]
         public Order Order { get; set; } = default!;
+
+        public SelectList RushOrderOptions { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -36,6 +33,14 @@ namespace RazorGroupMegaDesk.Pages.Orders
                 return NotFound();
             }
             Order = order;
+
+            RushOrderOptions = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem("No Rush", "0"),
+                new SelectListItem("3 days", "3"),
+                new SelectListItem("5 days", "5"),
+                new SelectListItem("7 days", "7"),
+            }, "Value", "Text");
             return Page();
         }
 
