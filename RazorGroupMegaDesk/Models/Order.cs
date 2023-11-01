@@ -28,6 +28,9 @@ namespace RazorGroupMegaDesk.Models
         [Display(Name = "Rush Order"), Required]
         public string RushOrder { get; set; }
 
+        [Display(Name = "Total")]
+        public string TotalAmount { get; set; }
+
         private const double PriceOak = 200;
         private const double PriceLaminate = 100;
         private const double PriceRosewood = 300;

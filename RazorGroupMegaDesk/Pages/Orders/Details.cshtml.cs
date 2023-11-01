@@ -32,6 +32,8 @@ namespace RazorGroupMegaDesk.Pages.Orders
             {
                 Order = order;
             }
+
+            order.TotalAmount = order.CalculateTotal();
             return Page();
         }
     }
