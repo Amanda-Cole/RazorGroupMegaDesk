@@ -14,15 +14,24 @@
             <a asp-page="Create" class="btn btn-success w-100">Create New</a>
         </div>
     </div>
-
+    <form>
+        <p>
+            Name: <input type="text" asp-for="SearchString" />
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Order[0].CustomerName)
+                    <a class="sortable" asp-page-handler="SortByName">
+                        @Html.DisplayNameFor(model => model.Order[0].CustomerName) <span class="arrow">&#x25BD</span>
+                    </a>
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Order[0].OrderDate)
+                    <a class="sortable" asp-page-handler="SortByDate">
+                        @Html.DisplayNameFor(model => model.Order[0].OrderDate) <span class="arrow">&#x25BD</span>
+                    </a>
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Order[0].Width)
