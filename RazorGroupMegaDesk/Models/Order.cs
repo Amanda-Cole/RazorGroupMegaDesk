@@ -29,7 +29,7 @@ namespace RazorGroupMegaDesk.Models
         public string RushOrder { get; set; }
 
         [Display(Name = "Total")]
-        public string TotalAmount { get; set; }
+        public string? TotalAmount { get; set; }
 
         private const double PriceOak = 200;
         private const double PriceLaminate = 100;
