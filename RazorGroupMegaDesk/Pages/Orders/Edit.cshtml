@@ -56,7 +56,8 @@
                 <div class="col-md-6">
                     <div class="form-group my-2">
                         <label asp-for="Order.SurfMaterial" class="control-label fw-bold"></label>
-                        <input asp-for="Order.SurfMaterial" class="form-control" />
+                        <select class="form-select" id="surfacematerial" asp-items="Model.SurfaceMaterialOptions" asp-for="Order.SurfMaterial">
+                        </select>
                         <span asp-validation-for="Order.SurfMaterial" class="text-danger"></span>
                     </div>
                 </div>

@@ -18,6 +18,8 @@ namespace RazorGroupMegaDesk.Pages.Orders
         [BindProperty]
         public Order Order { get; set; } = default!;
 
+        public SelectList SurfaceMaterialOptions { get; set; }
+
         public SelectList RushOrderOptions { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
@@ -41,6 +43,16 @@ namespace RazorGroupMegaDesk.Pages.Orders
                 new SelectListItem("5 days", "5"),
                 new SelectListItem("7 days", "7"),
             }, "Value", "Text");
+
+            SurfaceMaterialOptions = new SelectList(new List<SelectListItem>
+            {
+                new SelectListItem("Oak", "Oak"),
+                new SelectListItem("Laminate", "Laminate"),
+                new SelectListItem("Pine", "Pine"),
+                new SelectListItem("Rosewood", "Rosewood"),
+                new SelectListItem("Veneer", "Veneer")
+            }, "Value", "Text");
+
             return Page();
         }
 
